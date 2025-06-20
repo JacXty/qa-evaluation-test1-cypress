@@ -1,0 +1,64 @@
+INFORME DE PRUEBAS FUNCIONALES AUTOMATIZADAS
+
+Nombre del Evaluado: Jason Emmanuel Uyaguari Angamarca  
+Fecha: Junio 2025  
+Proyecto: Automatización de pruebas en https://demo.testim.io/  
+Herramienta utilizada: Cypress.io
+
+---
+
+OBJETIVO
+
+Automatizar los 10 pasos funcionales requeridos por la evaluación en la plataforma de prueba https://demo.testim.io/, incluyendo validación de título, filtros, selección de pasajeros, carga de imagen, formulario, código promocional y pago final.
+
+---
+
+HALLAZGOS DE LA SOLUCIÓN
+
+1. ✅ **Validación del Título:**
+   El título "Space & Beyond | Testim.io demo" fue validado correctamente.
+
+2. ✅ **Validación de Destino “Madan”:**
+   Se comprobó la existencia del destino solicitado en la interfaz.
+
+3. ⚠️ **Selección de Fecha:**
+   Solo es posible seleccionar fechas futuras. El 28/04/2023 no está disponible actualmente, por lo tanto, se seleccionó la fecha más próxima habilitada.
+
+4. ✅ **Selección de Pasajeros:**
+   El formulario permite seleccionar correctamente 2 adultos y 1 niño.
+
+5. ✅ **Filtro por Color Azul:**
+   El filtro responde correctamente mostrando destinos azulados.
+
+6. ✅ **Reserva del Planeta Tayabamba:**
+   Se validó el estado inicial del botón como "Book" y su posterior cambio a "Booked".
+
+7. ✅ **Formulario de Checkout:**
+   Se completaron todos los campos solicitados, incluyendo SSN y teléfono.
+
+8. ✅ **Carga de Fotografía:**
+   La carga de imagen funciona correctamente usando `cypress-file-upload`.
+
+9. ✅ **Código Promocional:**
+   El código promocional `30076` se aceptó sin errores.
+
+10. ⚠️ **Pago Final:**
+   El botón de pago solo se habilita si se completan correctamente los pasos anteriores. En caso contrario, permanece bloqueado sin indicar la razón al usuario.
+
+---
+
+CONCLUSIONES
+
+- Todos los flujos funcionales principales pudieron ser automatizados correctamente.
+- Cypress permitió una implementación clara, modular y repetible.
+- Se utilizó `cy.screenshot()` para evidencias visuales y `Cypress.env` para mantener variables centralizadas.
+
+---
+
+RECOMENDACIONES DE MEJORA PARA LA PÁGINA
+
+- Incluir validaciones visuales al usuario cuando un campo esté incompleto o falte subir un archivo.
+- Agregar mensajes cuando el botón de pago esté deshabilitado.
+- Habilitar fechas anteriores para pruebas demo o dar feedback claro si no están disponibles.
+
+---
